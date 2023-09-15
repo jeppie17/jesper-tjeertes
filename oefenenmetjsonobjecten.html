@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JSON-object manipulatie</title>
+</head>
+<body>
+  <h1>JSON-object manipulatie</h1>
+  <h3><a href="datastructuren.html">terug naar de beginpagina</a></h3>
+  <script>
+    // JSON-object definiëren
+    const jsonObject = {
+      naam: "Jesper",
+      leeftijd: 16,
+      stad: "kopenhagen"
+    };
+
+    // JSON-object weergeven op de console
+    console.log(jsonObject);
+
+    // JSON-object omzetten naar JSON-string
+    const jsonString = JSON.stringify(jsonObject);
+
+    // JSON-string weergeven op de console
+    console.log(jsonString);
+
+    // JSON-string omzetten naar JavaScript-object
+    const parsedObject = JSON.parse(jsonString);
+
+    // Eigenschappen van het JavaScript-object weergeven op de console
+    for (let key in parsedObject) {
+      console.log(`${key}: ${parsedObject[key]}`);
+    }
+
+    // Console-uitvoer weergeven in HTML
+    function logToConsole(message) {
+      const consoleOutput = document.getElementById("console-output");
+      consoleOutput.innerHTML += message + "<br>";
+    }
+
+    console.log = logToConsole;
+  </script>
+
+  <h2>Console-uitvoer:</h2>
+  <div id="console-output"></div>
+</body>
+</html>
